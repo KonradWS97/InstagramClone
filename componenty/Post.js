@@ -4,7 +4,8 @@ import {
     Text,
     Image, 
     StyleSheet,
-    FlatList
+    FlatList, 
+    TouchableOpacity
 } from "react-native";
 import { Divider } from "react-native-elements";
 import { useState, useEffect } from 'react';
@@ -19,6 +20,7 @@ const Post = ({post}) =>{
             <Divider width={1} orientation ='vertical' />
             <PostHeader post = {post}  />
             <PostImage post= {post} />
+            <PostFooter post = {post}/>
         </View>
     )
 }
@@ -38,9 +40,9 @@ const PostHeader =({post})=> {
         margin: 5,
         alignItems: 'center',
             }}>
-            <View >
+            <View style={{ flexDirection: 'row', alignItems: 'center'}}>
                 <Image source={{uri: post.thumbnailUrl }} style={styles.story} /> 
-                <Text style ={{ color: 'white', marginLeft: 5, fontWeight: '700' }}>{post.id}
+                <Text style ={{ color: 'white', marginLeft: 5, fontWeight: '700' }}>user.{post.id}
                 </Text>   
             </View>    
         </View>
@@ -59,10 +61,29 @@ const PostImage = ({post}) => {
     }}
     >
         <Image
-        source={{ uri: post.thumbnailUrl}}
+        source={{ uri: post.url}}
         style={{height: '100%', resizeMode: 'cover'}}/>
     </View>    
 )}
+
+const PostFooter = ({post}) =>(
+    <View>
+        <Text style ={{ color: 'white', marginLeft: 5, fontWeight: '500' }}>Tytuł: {post.title}
+        </Text>   
+
+        <TouchableOpacity>
+            <Image style={{  
+            marginLeft: 5,     
+            width: 40, 
+            height: 40,
+            resizeMode: 'contain'}}
+            source = {require('../assets/heart.png')} />
+        </TouchableOpacity>
+        
+
+    </View>
+)
+
 const styles = StyleSheet.create({
     story: {
         width: 35,
@@ -74,5 +95,6 @@ const styles = StyleSheet.create({
         borderColor: 'orange'
     }
 })
+
 
 export default Post

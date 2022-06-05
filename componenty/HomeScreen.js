@@ -4,11 +4,12 @@ import {
     Text,
     SafeAreaView,
     StyleSheet,
-    ScrollView
+    ScrollView,
 } from 'react-native'
 import Header from './Header'
 import Storie from './Storie'
-import Post from './Post'
+import Post from './Post' 
+import BottomTabs, { bottomTabIcons } from '../componenty/BottomTabs'
 import { useState, useEffect } from 'react';
 
 const url = 'https://jsonplaceholder.typicode.com/photos'
@@ -29,13 +30,14 @@ const HomeScreen = () => {
                 <Post post={post} key={index} />
             ))}
         </ScrollView>
+        <BottomTabs icons={bottomTabIcons} /> 
     </SafeAreaView>
 }
 
 const style = StyleSheet.create({
     container: {
         marginTop: 5,
-        backgroundColor: 'black',
+        backgroundColor: '#080808',
         flex: 1, 
     },
 })
