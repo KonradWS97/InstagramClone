@@ -8,7 +8,7 @@ import {
     TouchableOpacity
 } from "react-native";
 import { Divider } from "react-native-elements";
-import { useState, useEffect } from 'react';
+
 
 
 

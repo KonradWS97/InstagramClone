@@ -26,7 +26,7 @@ const style =StyleSheet.create({
 const Header = ({navigation}) => {
     return (
         <View style={style.container}> 
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=> navigation.push('Mosaic')}>
                 <Image style={style.logo}
                 source = {require('./../assets/instagramIcon.png')} />
             </TouchableOpacity>

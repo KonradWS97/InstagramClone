@@ -10,6 +10,7 @@ import {
 import { StackRouter } from "react-navigation";
 import HomeScreen from "./HomeScreen";
 import NewPostScreen from "./NewPostScreen";
+import Mosaic from "./Mosaic";
 
 const Stack =createStackNavigator()
 
@@ -24,6 +25,7 @@ const SingedInStack = () => (
             screenOptions={screenOptions}>
             <Stack.Screen name='HomeScreen' component={HomeScreen}/>
             <Stack.Screen name='NewPostScreen' component={NewPostScreen}/>
+            <Stack.Screen name='Mosaic' component={Mosaic}/>
         </Stack.Navigator>
     </NavigationContainer>
 

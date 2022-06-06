@@ -7,7 +7,6 @@ import { View ,
 import { ScrollView } from 'react-native'
 import { USERS } from '../assets/users'
 
-// Users
 
 const Stories = () => {
   return (
