@@ -6,9 +6,9 @@ import {
     StyleSheet,
     ScrollView,
 } from 'react-native'
-import Header from './Header'
-import Storie from './Storie'
-import Post from './Post' 
+import Header from '../componenty/Header'
+import Storie from '../componenty/Storie'
+import Post from '../componenty/Post' 
 import BottomTabs, { bottomTabIcons } from '../componenty/BottomTabs'
 import { useState, useEffect } from 'react';
 
@@ -18,12 +18,12 @@ async function getData(){
   return await response.json()
 }
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
     const [data, setData ] = useState([])
     useEffect(( )=>{getData().then(resData=> setData(resData)) },[])
 
     return <SafeAreaView style={style.container} >
-        <Header />
+        <Header  navigation={navigation}/>
         <Storie />
         <ScrollView>
             {data.map((post, index) => (

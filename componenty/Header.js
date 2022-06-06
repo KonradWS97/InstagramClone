@@ -23,7 +23,7 @@ const style =StyleSheet.create({
         flexDirection: 'row' 
     }
 })
-const Header = () => {
+const Header = ({navigation}) => {
     return (
         <View style={style.container}> 
             <TouchableOpacity>
@@ -35,7 +35,7 @@ const Header = () => {
                     <Image style={style.titleLogo}
                     source = {require('./../assets/letter.png')} />
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={()=> navigation.push('NewPostScreen')}>
                     <Image style={style.titleLogo}
                     source = {require('./../assets/reward.png')} />
                 </TouchableOpacity>

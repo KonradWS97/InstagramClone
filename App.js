@@ -10,7 +10,9 @@ import {
 } from 'react-native';
 import { useState, useEffect } from 'react';
 import Header from './componenty/Header';
-import HomeScreen from './componenty/HomeScreen';
+import HomeScreen from './screeny/HomeScreen';
+import NewPostScreen from './screeny/NewPostScreen';
+import SingedInStack from './screeny/navigation';
 
 // const url = 'https://jsonplaceholder.typicode.com/photos'
 // async function getImg(){
@@ -23,7 +25,8 @@ export default function App() {
 //  useEffect(( )=>{getImg().then(resFotos=> setFotos(resFotos)) },[])
   return(  
     
-      <HomeScreen/>
+      // <HomeScreen/>
+      <SingedInStack/>
     
   // <View >
   //   <FlatList keyExtractor={(item)=> item.id } data={fotos} renderItem={({item})=>
