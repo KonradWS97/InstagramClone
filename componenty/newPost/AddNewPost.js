@@ -21,7 +21,8 @@ const Header = ({navigation}) => {
     return(
         <View style={styles.headerContainer}>
             <TouchableOpacity
-            onPress={() =>navigation.goBack()}>
+            onPress={() =>navigation.goBack()}
+            >
                 <Image 
                     source={{ uri: 'https://img.icons8.com/ultraviolet/80/undefined/back.png'}}
                     style= {{ width: 30, height: 30}}

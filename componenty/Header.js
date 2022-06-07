@@ -26,7 +26,8 @@ const style =StyleSheet.create({
 const Header = ({navigation}) => {
     return (
         <View style={style.container}> 
-            <TouchableOpacity onPress={()=> navigation.push('Mosaic')}>
+            <TouchableOpacity
+            >
                 <Image style={style.logo}
                 source = {require('./../assets/instagramIcon.png')} />
             </TouchableOpacity>
@@ -35,7 +36,8 @@ const Header = ({navigation}) => {
                     <Image style={style.titleLogo}
                     source = {require('./../assets/letter.png')} />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={()=> navigation.push('NewPostScreen')}>
+                <TouchableOpacity 
+                >
                     <Image style={style.titleLogo}
                     source = {require('./../assets/reward.png')} />
                 </TouchableOpacity>

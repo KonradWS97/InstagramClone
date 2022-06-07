@@ -1,4 +1,3 @@
-import React from "react";
 import {
     View,
     Text,
@@ -7,13 +6,16 @@ import {
     FlatList, 
     TouchableOpacity
 } from "react-native";
+import React from "react";
 import { Divider } from "react-native-elements";
 
 
 
 
 
+
 const Post = ({post}) =>{
+    console.log( post )
     
     return(
         <View style={{ marginBottom: 30 }}>

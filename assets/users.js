@@ -18,13 +18,5 @@ export const USERS = [
     {
         user: 'Audreay',
         image:'https://picsum.photos/100/100?random=5'
-    },
-    {
-        user: 'Audreay',
-        image:'https://picsum.photos/100/100?random=6'
-    },
-    {
-        user: 'Audreay',
-        image:'https://picsum.photos/100/100?random=7'
-    },
+    }
 ]

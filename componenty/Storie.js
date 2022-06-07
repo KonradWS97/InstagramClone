@@ -15,7 +15,7 @@ const Stories = () => {
         horizontal 
         showsHorizontalScrollIndicator ={false}>
             {USERS.map((story, index) => (
-                <View>
+                <View key = {story.user}>
                     <Image source ={{ uri: story.image }} style ={styles.story}/>
                     <Text style={styles.storyTitle}>{story.user}</Text>
                 </View> 

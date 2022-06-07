@@ -3,6 +3,7 @@ import {
     View,
     Text,
     SafeAreaView,
+    FlatList,
     StyleSheet,
     ScrollView,
 } from 'react-native'
@@ -12,7 +13,7 @@ import Post from '../componenty/Post'
 import BottomTabs, { bottomTabIcons } from '../componenty/BottomTabs'
 import { useState, useEffect } from 'react';
 
-const url = 'https://jsonplaceholder.typicode.com/photos'
+const url = 'https://jsonplaceholder.typicode.com/albums/1/photos'
 async function getData(){
   const response = await fetch(url) 
   return await response.json()
@@ -20,17 +21,26 @@ async function getData(){
 
 const HomeScreen = ({navigation}) => {
     const [data, setData ] = useState([])
-    useEffect(( )=>{getData().then(resData=> setData(resData)) },[])
+    useEffect(( )=>{getData().then(resData=> {setData(resData); console.log(resData)}) },[])
 
     return <SafeAreaView style={style.container} >
         <Header  navigation={navigation}/>
         <Storie />
-        <ScrollView>
+
+        {/* {data.length> 0 && <View >
+            <FlatList
+            keyExtractor={(post)=> post.id } data={data} renderItem={({post})=>
+                <View>
+                <Post post={post}  /></View> }
+            />
+        </View> } */}
+
+            <ScrollView>
             {data.map((post, index) => (
                 <Post post={post} key={index} />
             ))}
-        </ScrollView>
-        <BottomTabs icons={bottomTabIcons} /> 
+            </ScrollView>
+        {/* <BottomTabs icons={bottomTabIcons} />  */}
     </SafeAreaView>
 }
 
